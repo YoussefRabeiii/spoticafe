@@ -1,8 +1,13 @@
 .main {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	padding: 6rem;
-	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+}
+
+.panel {
+	display: block;
+	background-color: rgb(1, 24, 87);
+}
+
+.panel:nth-of-type(2) {
+	background-color: rgb(112, 1, 1);
 }

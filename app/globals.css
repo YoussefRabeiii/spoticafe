@@ -1,24 +1,13 @@
-:root {
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 255, 255, 255;
-		--background-start-rgb: 0, 0, 0;
-		--background-end-rgb: 0, 0, 0;
-	}
-}
-
-* {
-	box-sizing: border-box;
-	padding: 0;
+*,
+html {
 	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-html,
 body {
-	max-width: 100vw;
-	overflow-x: hidden;
+	color: #fff;
+	background-color: rgb(5, 12, 104);
 }
 
 a {
@@ -26,8 +15,20 @@ a {
 	text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
+ul {
+	list-style: none;
+}
+
+nav,
+footer {
+	height: 10vh;
+	background-color: rgb(5, 105, 105);
+}
+
+main {
+	min-height: 80vh;
+}
+
+#fotter {
+	background-color: blueviolet;
 }
