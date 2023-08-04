@@ -11,7 +11,7 @@ const track = {
 		height: 300,
 		alt: "How To Let Go Album Cover",
 	},
-	duration: 200,
+	duration: 330085,
 	plays: 5795010,
 
 	artist: {
@@ -22,7 +22,7 @@ const track = {
 			height: 300,
 			alt: "Sigrid's Photo",
 		},
-		bio: "Norwegian singer-songwriter. She has released two studio albums, Sucker Punch and How to Let Go, both of which charted in Norway and the United Kingdom. She has also released two EPs",
+		bio: "Norwegian singer-songwriter. She has released two studio albums, Sucker Punch and How to Let Go, both ",
 		monthlyListeners: 2451064,
 	},
 };
@@ -31,34 +31,58 @@ const Preview = ({ id = "4e64oQwdgwUUADrC26DCdI" }) => {
 	// TODO: 👽 const track = useTrack(id);
 
 	const { title, album, image, duration, plays, artist } = track;
+	const durationSec = duration / 1000;
+
+	const imageSize = 400;
+	image.width = imageSize;
+	image.height = imageSize;
 
 	return (
 		<div className={styles.preview}>
-			<Image
-				src={image.src}
-				alt={`The Track Cover of ${title}`}
-				width={image.width}
-				height={image.height}
-			/>
-			<div className={styles.info}>
-				<h2>{title}</h2>
-				<h3>{artist.name}</h3>
-				<h4>{album}</h4>
+			<div className={styles.imageContainer}>
+				<Image
+					src={image.src}
+					width={image.width}
+					height={image.height}
+					className={styles.songCover}
+					alt={`The Track Cover of ${title}`}
+				/>
+				<div className={styles.info}>
+					<div className={styles.infoTxt}>
+						<h3 className={styles.title}>{title}</h3>
+						<h4 className={styles.tagline}>{album || artist.name}</h4>
+					</div>
 
-				<div className={styles.stats}>
-					<span>{plays} plays</span>
-					<span>{duration} seconds</span>
+					<div className={styles.infoStats}>
+						{/* People icon */}
+						{/* counter ascending */}
+						<div className={styles.plays}>
+							<span>👥</span>
+							{plays}
+						</div>
+						<div className={styles.duration}>
+							{Math.floor(durationSec / 60)}:
+							{Math.floor(durationSec % 60)}
+						</div>
+					</div>
 				</div>
+			</div>
 
-				<div className={styles.artist}>
-					<Image
-						src={artist.image.src}
-						alt={`${artist.name}'s Photo`}
-						width={image.width}
-						height={image.height}
-					/>
+			<div className={styles.artist}>
+				<Image
+					width={image.width}
+					height={image.width / 2}
+					src={artist.image.src}
+					alt={`${artist.name}'s Photo`}
+					className={styles.artistImage}
+				/>
+				<div className={styles.artistInfo}>
+					<p className={styles.listeners}>
+						{artist.monthlyListeners} monthlyListeners
+					</p>
+
+					{/* get the maximum number of characters and then remove everything after the last fullstop (so we have maximum number of full sentences) */}
 					<p className={styles.artistBio}>{artist.bio}</p>
-					<h4 className={styles.listeners}>{artist.monthlyListeners}</h4>
 				</div>
 			</div>
 		</div>

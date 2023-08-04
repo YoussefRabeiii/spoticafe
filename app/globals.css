@@ -6,6 +6,7 @@ html {
 }
 
 body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	color: #fff;
 	background-color: rgb(5, 12, 104);
 }
@@ -21,12 +22,12 @@ ul {
 
 nav,
 footer {
-	height: 10vh;
+	height: 5vh;
 	background-color: rgb(5, 105, 105);
 }
 
 main {
-	min-height: 80vh;
+	min-height: 90vh;
 }
 
 #fotter {
