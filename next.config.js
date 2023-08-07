@@ -15,8 +15,10 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "static.independent.co.uk",
-				// port: '',
-				// pathname: '/image/upload/**',
+			},
+			{
+				protocol: "https",
+				hostname: "i.scdn.co",
 			},
 		],
 	},

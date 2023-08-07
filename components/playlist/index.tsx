@@ -38,7 +38,7 @@ const fakeTracks = [
         },
         {
           height: 64,
-          url: "https://upload.wikimedia.org/wikipedia/en/d/d4/Sigrid_-_How_to_Let_Go.png",
+          url: "https://i.scdn.co/image/ab67616d0000485171cecf4c653a4bad539da13d",
           width: 64,
         },
       ],
