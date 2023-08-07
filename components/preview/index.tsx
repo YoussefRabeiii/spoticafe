@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
-import { readMore } from "@utils";
+import { readMore, time } from "@utils";
 
 const track = {
   id: "4e64oQwdgwUUADrC26DCdI",
@@ -32,7 +32,6 @@ const Preview = ({ id = "4e64oQwdgwUUADrC26DCdI" }) => {
   // TODO: 👽 const track = useTrack(id);
 
   const { title, album, image, duration, plays, artist } = track;
-  const durationSec = duration / 1000;
 
   const imageSize = 320;
   image.width = imageSize;
@@ -61,9 +60,7 @@ const Preview = ({ id = "4e64oQwdgwUUADrC26DCdI" }) => {
               <span>👥</span>
               {plays}
             </div>
-            <div className={styles.duration}>
-              {Math.floor(durationSec / 60)}:{Math.floor(durationSec % 60)}
-            </div>
+            <div className={styles.duration}>{time({ ms: duration })}</div>
           </div>
         </div>
       </div>
