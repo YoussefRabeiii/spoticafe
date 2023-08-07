@@ -54,7 +54,7 @@ const Playlist: FC<PlaylistProps> = ({
   return (
     <div className={styles.playlist}>
       {tracks.map((track) => (
-        <Track {...track} id={track.id} />
+        <Track {...track} key={track.id} />
       ))}
     </div>
   );
