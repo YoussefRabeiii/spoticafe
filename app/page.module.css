@@ -1,13 +1,13 @@
 .main {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .panel {
-	display: block;
-	background-color: rgb(1, 24, 87);
+  display: block;
+  background-color: rgb(1, 24, 87);
 }
 
 .panel:nth-of-type(2) {
-	background-color: rgb(112, 1, 1);
+  background-color: rgb(112, 1, 1);
 }
