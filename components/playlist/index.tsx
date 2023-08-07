@@ -9,7 +9,7 @@ const fakeTracks = [
     explicit: false,
     duration_ms: 146666,
     id: "1T8YUlqrG15Tjetxhos6eJ",
-plays: 895512365,
+    plays: 895512365,
     preview_url:
       "https://p.scdn.co/mp3-preview/349498344b7ac5062ced4f56931ed7e7a1ba3515?cid=9ef7a66ef84e4573b2bc1234948b2c27",
     artists: [
@@ -54,7 +54,7 @@ const Playlist: FC<PlaylistProps> = ({
   return (
     <div className={styles.playlist}>
       {tracks.map((track) => (
-        <Track {...track} />
+        <Track {...track} id={track.id} />
       ))}
     </div>
   );
