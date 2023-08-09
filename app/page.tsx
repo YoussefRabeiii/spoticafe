@@ -1,5 +1,6 @@
+import SearchOut from "components/search/searchOut";
 import styles from "./page.module.css";
-import { Preview, Playlist } from "@components";
+import { Preview, Search, Playlist } from "@components";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
         <Preview />
       </div>
       <div className={styles.panel}>
-        <h1>Search</h1>
+        {/* <Search /> */}
+        <SearchOut />
         <Playlist />
       </div>
     </main>
