@@ -1,3 +1,7 @@
+:root {
+  --corner: 10px;
+}
+
 *,
 html {
   margin: 0;

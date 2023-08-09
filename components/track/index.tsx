@@ -56,39 +56,58 @@ const Track: FC<TrackProps> = ({
 
   return (
     <div className={styles.track}>
-      <div className={styles.imageContainer}>
-        {/* TODO: Preview if playable */}
+      <div className={styles.trackLeft}>
+        <div className={styles.imageContainer}>
+          {/* TODO: Preview if playable */}
 
-        {/* TODO: make it responsive (use smaller images on mobile etc.) */}
-        {/* BUG: Array Wider First - idk if there's a limit */}
-        <Image
-          alt={`${name}'s cover`}
-          src={album.images[2].url}
-          width={album.images[2].width}
-          height={album.images[2].height}
-        />
+          {/* TODO: make it responsive (use smaller images on mobile etc.) */}
+          {/* BUG: Array Wider First - idk if there's a limit */}
+          <Image
+            alt={`${name}'s cover`}
+            src={album.images[2].url}
+            width={album.images[2].width}
+            className={styles.trackImage}
+            height={album.images[2].height}
+          />
+        </div>
+
+        <div className={styles.names}>
+          <h3 className={styles.name}>{name}</h3>
+
+          {/* FIXME: get the artist or the album artist */}
+          <h5 className={styles.artist}>
+            {artists[0].name || album.artists[0].name}
+          </h5>
+        </div>
       </div>
 
-      <h1>{name}</h1>
+      <div className={styles.trackRight}>
+        {/* <div className={styles.trackInfo}> */}
+        {/* popularity */}
+        {/* <p><popularityScale value={popularity} /></p> */}
+        <span className={styles.plays}>
+          <p>{plays}</p>
+        </span>
 
-      {/* FIXME: get the artist or the album artist */}
-      <h4>{artists[0].name || album.artists[0].name}</h4>
+        {/* duration */}
+        <span className={styles.dur}>
+          <p>{time({ ms: duration_ms, human: true })}</p>
+        </span>
+        {/* </div> */}
 
-      {/* duration */}
-      <p>{time({ ms: duration_ms, human: true })}</p>
+        {/* Like / Dislike btns*/}
+        <div className={styles.vote}>
+          <span onClick={handleLike} className={styles.like}>
+            {liked ? "💖" : "👍"}
+          </span>
+          <span onClick={handleDislike} className={styles.disLike}>
+            {disLiked ? "💔" : "👎"}
+          </span>
 
-      {/* popularity */}
-      {/* <p><popularityScale value={popularity} /></p> */}
-      <p>{plays}</p>
-
-      {/* Like / Dislike btns*/}
-      <div className={styles.vote}>
-        <span onClick={handleLike}>{liked ? "💖💖" : "💖"}</span>
-        <span onClick={handleDislike}>{disLiked ? "💔💔" : "💔"}</span>
-
-        {/* <span>likes: {likes}</span> */}
-        {/* <span>disLikes: {disLikes}</span> */}
-        {/* <span>netScore: {netScore}</span> */}
+          {/* <span>likes: {likes}</span> */}
+          {/* <span>disLikes: {disLikes}</span> */}
+          {/* <span>netScore: {netScore}</span> */}
+        </div>
       </div>
     </div>
   );

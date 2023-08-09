@@ -1,0 +1,89 @@
+.track {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* WIP: Still Tweaking UI */
+  border-block-end: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0.329);
+}
+
+.track:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.719);
+}
+
+/* FIXME: Refactor this shitty code */
+.track:nth-of-type(1) {
+  border-radius: var(--corner) var(--corner) 0 0;
+}
+
+.track:nth-of-type(1) .trackImage {
+  border-top-left-radius: var(--corner);
+}
+
+.track:nth-last-of-type(1) {
+  border-block-end: none;
+  border-radius: 0 0 var(--corner) var(--corner);
+}
+
+.track:nth-last-of-type(1) .trackImage {
+  border-bottom-left-radius: var(--corner);
+}
+
+.trackLeft,
+.trackRight {
+  display: flex;
+  align-items: center;
+}
+
+.imageContainer {
+  margin-inline-end: 0.6rem;
+}
+
+.trackImage {
+  display: block;
+}
+
+.names {
+  text-align: left;
+}
+
+.name {
+}
+
+.artist {
+  font-weight: 600;
+}
+
+.trackRight {
+  display: grid;
+  padding-inline-start: 2.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* background-color: rgba(7, 90, 145, 0.521); */
+}
+
+.dur {
+  padding-inline-start: 0.5rem;
+  /* background-color: rgba(28, 1, 90, 0.808); */
+}
+
+.plays {
+  /* margin-inline-end: -1rem; */
+  /* background-color: rgba(197, 178, 5, 0.911); */
+}
+
+.vote {
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-between;
+  /* background-color: rgba(28, 1, 90, 0.808); */
+}
+
+.like,
+.disLike {
+  cursor: pointer;
+}
+.like {
+}
+
+.disLike {
+}

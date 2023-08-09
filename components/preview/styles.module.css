@@ -7,7 +7,7 @@
   text-align: center;
   height: min-content;
   align-items: center;
-  border-radius: 10px;
+  border-radius: var(--corner);
   flex-direction: column;
   justify-content: center;
   border: 1px solid #fff;
@@ -16,7 +16,7 @@
 .imageContainer {
 }
 .songCover {
-  border-radius: 10px 10px 0 0;
+  border-radius: var(--corner) var(--corner) 0 0;
 }
 
 .info {
@@ -50,7 +50,7 @@
 }
 .artistImage {
   filter: brightness(0.6);
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 var(--corner) var(--corner);
 }
 .artistInfo {
   left: 0;

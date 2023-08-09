@@ -2,13 +2,15 @@
   margin: auto;
   display: flex;
   padding: 1.2rem;
-  min-width: 22vw;
-  width: min-content;
+  /* min-width: 22vw; */
+  /* width: min-content; */
   text-align: center;
   height: min-content;
   align-items: center;
-  border-radius: 10px;
+  border-radius: var(--corner);
   flex-direction: column;
   justify-content: center;
   border: 1px solid #fff;
+
+  min-width: 50vw;
 }
