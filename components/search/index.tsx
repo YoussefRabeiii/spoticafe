@@ -1,9 +1,9 @@
 "use client";
 
-import { FC, FormEvent, useState } from "react";
+import { FC, FormEvent, Key, useState } from "react";
 import { Playlist } from "@components";
 import styles from "./styles.module.css";
-
+ 
 const Search: FC = () => {
   const [results, setResults] = useState([""]);
 
@@ -35,8 +35,9 @@ const Search: FC = () => {
       <div className={styles.results}>
         {/* <Playlist tracks={results} /> */}
 
-        {results.map((track: any) => (
-          <p>{track}</p>
+        {/* FIXME: Types Interfaaces  */}
+        {results.map((track: any, i : Key) => (
+          <p key={i}>{track}</p>
         ))}
       </div>
     </div>

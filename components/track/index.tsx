@@ -59,9 +59,8 @@ const Track: FC<TrackProps> = ({
       <div className={styles.trackLeft}>
         <div className={styles.imageContainer}>
           {/* TODO: Preview if playable */}
-
           {/* TODO: make it responsive (use smaller images on mobile etc.) */}
-          {/* BUG: Array Wider First - idk if there's a limit */}
+          {/* BUG: Array Wider First                                                                                - idk if there's a limit */}
           <Image
             alt={`${name}'s cover`}
             src={album.images[2].url}

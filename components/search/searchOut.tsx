@@ -49,8 +49,7 @@ const SearchOut: FC = () => {
         type="text"
         value={query}
       />
-      {active && results.length > 0 && <ul>
-        {results}</ul>}
+      {active && results.length > 0 && <ul>{results}</ul>}
     </div>
   );
 };

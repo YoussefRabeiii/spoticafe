@@ -9,8 +9,8 @@ export default function Home() {
         <Preview />
       </div>
       <div className={styles.panel}>
-        {/* <Search /> */}
         <SearchOut />
+        <Search />
         <Playlist />
       </div>
     </main>
